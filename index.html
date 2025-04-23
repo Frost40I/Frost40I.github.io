@@ -11,13 +11,14 @@
       display: flex;
     }
 
-    /* 좌측 메뉴 */
     nav {
       width: 220px;
       background-color: #f5f5f5;
       padding: 20px;
       height: 100vh;
       box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
     }
 
     nav ul {
@@ -27,14 +28,22 @@
 
     nav ul li {
       margin: 15px 0;
-      font-weight: bold;
-      color: teal;
     }
 
-    /* 우측 본문 */
+    nav ul li a {
+      text-decoration: none;
+      color: teal;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
     main {
       flex: 1;
       padding: 40px;
+      overflow-y: auto;
     }
 
     .header {
@@ -69,17 +78,16 @@
 <body>
   <nav>
     <ul>
-      <li>기본 정보</li>
-      <li>기술 스택</li>
-      <li>경력</li>
-      <li>포트폴리오</li>
-      <li>교육</li>
-      <li>수상 및 자격</li>
+      <li><a href="#basic">기본 정보</a></li>
+      <li><a href="#skills">기술 스택</a></li>
+      <li><a href="#career">경력</a></li>
+      <li><a href="#education">교육</a></li>
+    
     </ul>
   </nav>
 
   <main>
-    <div class="header">
+    <div class="header" id="basic">
       <div>
         <h1>정지훈 이력서</h1>
         <p>백엔드 개발자 지망생</p>
@@ -88,12 +96,14 @@
       </div>
       <img src="your-photo.jpg" alt="프로필 사진">
     </div>
-    <section class="section">
+
+    <section class="section" id="education">
       <h2>학력</h2>
       <p>소하고등학교 2019년 ~ 2022.12.22 졸업</p>
       <p>동양미래대학교 2023년 ~ 현재 재학중</p>
     </section>
-    <section class="section">
+
+    <section class="section" id="skills">
       <h2>기술 스택</h2>
       <p><strong>Front End:</strong> React, HTML5, CSS</p>
       <p><strong>Back End:</strong> Spring, Java</p>
@@ -102,7 +112,7 @@
       <p><strong>Game:</strong> Unity</p>
     </section>
 
-    <section class="section">
+    <section class="section" id="career">
       <h2>경력</h2>
       <p><strong>졸업작품 프로젝트:</strong> 음악 검색·추천 백엔드 담당</p>
     </section>
